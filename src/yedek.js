@@ -62,7 +62,7 @@ const Bath = () => {
 
             
             <div className="bath_panel">
-                <h1 style={{position:"absolute",top:"0%",zIndex:"50", left:"40%" }}>Dein Haus! Deine Seele </h1>
+                <h1 style={{position:"absolute",top:"-10%", left:"40%" }}>Dein Haus! Deine Seele </h1>
                 <img className='bath_image' src={bath} alt="bath_image_alternative" />
                 
                 <img className='test' style={{position:"absolute", left:"0%", top:"0%" ,width:"100%", 
@@ -78,7 +78,7 @@ const Bath = () => {
                 <div onMouseLeave={()=> setDetails(false)} className="bath_panel_shell">
                    
                         <div onMouseEnter={()=> setDetails(true)}  className="bath_panel_options">
-                            <div className="bath_panel_option" onMouseOver={()=> front_mouse_enter()} 
+                            <div className="bath_panel_option" onMouseEnter={()=> front_mouse_enter()} 
                             >Front</div>
                             <div  className="bath_panel_option" onMouseEnter={()=> korpus_mouse_enter()}
                             >Korpus</div>
@@ -98,7 +98,7 @@ const Bath = () => {
                                 )
                             }
                             
-                            { Korpus &&
+                            { Korpus && 
                                 Korpus_Products.map((F) =>
                                 <div key={F.name} className="option_in_subcategory">
                                    <img onClick={() => image_handler_korpus(F.code)} className='product_image' src={F.image} style={{width:"90%", height:"90%"}} alt="Korpus" />
@@ -108,7 +108,7 @@ const Bath = () => {
 
                             }
 
-                            { Waschtisch &&
+                            { Waschtisch && 
                                 Waschtisch_Products.map((F) =>
                                 <div key={F.name} className="option_in_subcategory">
                                     <img onClick={() => image_handler_wash(F.code)} className='product_image' src={F.image} alt="Waschtich" style={{width:"100%", height:"100%"}}/>
