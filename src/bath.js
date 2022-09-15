@@ -6,11 +6,14 @@ import {Front_Products, Korpus_Products,Waschtisch_Products} from './photo_impor
 
 const Bath = () => {
     const [Details, setDetails] = useState(false)
+    const [Room, setRoom] = useState(false)
     const [Front, setFront] = useState(false)
     const [Korpus, setKorpus] = useState(false)
     const [Waschtisch, setWaschtisch] = useState(false)
 
-    
+    const [show_image_room, setShow_room] = useState(false)
+    const [ima_room, setImage_room] = useState(null)
+
     const [show_image_front, setShow_front] = useState(false)
     const [ima_front, setImage_front] = useState(null)
 
@@ -42,21 +45,29 @@ const Bath = () => {
 
 
 
-    
-      function front_mouse_enter () {
-                                        setFront(true)
-                                        setKorpus(false)
-                                        setWaschtisch(false)
-                                    }
+    function room_mouse_enter () {
+                                    setFront(false)
+                                    setKorpus(false)
+                                    setWaschtisch(false)
+                                    setRoom(true)
+                                } 
+    function front_mouse_enter () {
+                                    setFront(true)
+                                    setKorpus(false)
+                                    setWaschtisch(false)
+                                    setRoom(false)
+                                }
     function korpus_mouse_enter () {
                                         setFront(false)
                                         setKorpus(true)
                                         setWaschtisch(false)
+                                        setRoom(false)
                                     }    
     function Waschtisch_mouse_enter () {
                                         setFront(false)
                                         setKorpus(false)
                                         setWaschtisch(true)
+                                        setRoom(false)
                                     }                                                        
     return ( 
 
@@ -78,6 +89,8 @@ const Bath = () => {
                 <div onMouseLeave={()=> setDetails(false)} className="bath_panel_shell">
                    
                         <div onMouseEnter={()=> setDetails(true)}  className="bath_panel_options">
+                            <div className="bath_panel_option" onMouseOver={()=> room_mouse_enter()} 
+                            >Front</div>
                             <div className="bath_panel_option" onMouseOver={()=> front_mouse_enter()} 
                             >Front</div>
                             <div  className="bath_panel_option" onMouseEnter={()=> korpus_mouse_enter()}
@@ -88,9 +101,19 @@ const Bath = () => {
 
                     
                         <div style={{display: Details ? "grid" : "none", 
-                        height: Korpus ? "60%" : "100%",
+                        height: Korpus ? "60%" : Room ? "30%" : "100%",
                         marginTop: Korpus ? "10%" : "0%"
-                        }} className="bath_panel_options_detail">                   
+                        }} className="bath_panel_options_detail">    
+                            { Room &&
+
+                                <div className="option_in_subcategory_room" onClick={() => setDetails(false)}>
+                                    <img  className='room_image'  src={bath} alt="Room" /> 
+                                    <div className="product_name">Room</div> 
+                                </div>
+                                
+                                
+                            }
+
                             { Front &&
                                 Front_Products.map((F) =>
                                 // console.log(F.image) &&

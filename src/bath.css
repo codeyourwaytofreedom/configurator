@@ -27,7 +27,7 @@
     grid-template-columns: 1fr 4fr;
     top: -90%; left:2%;
     width: 65%;
-    height: 65%;
+    height: 70%;
     column-gap: 5%;
 }
 
@@ -79,7 +79,18 @@
 
 
 }
-
+.option_in_subcategory_room {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+    padding-left: 4%;
+    padding-top: 2%;
+    gap:4%;
+    /* border: 1px solid red; */
+    cursor: pointer;
+    height: 10vh;
+    box-shadow: inset 2px 2px 5px  rgb(216, 224, 104);
+}
 
 
 .product_name{
@@ -104,6 +115,11 @@
 }
 
 .product_image_wash{
+    width: 100%;
+    height: 100%;
+}
+
+.room_image{
     width: 100%;
     height: 100%;
 }
