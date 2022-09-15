@@ -87,12 +87,15 @@ const Bath = () => {
                         </div>
 
                     
-                        <div style={{display: Details ? "grid" : "none",}} className="bath_panel_options_detail">                   
+                        <div style={{display: Details ? "grid" : "none", 
+                        height: Korpus ? "60%" : "100%",
+                        marginTop: Korpus ? "10%" : "0%"
+                        }} className="bath_panel_options_detail">                   
                             { Front &&
                                 Front_Products.map((F) =>
                                 // console.log(F.image) &&
-                                <div  key={F.name} className="option_in_subcategory" onClick={() => setDetails(false)}>
-                                    <img onClick={() => image_handler_front(F.code) } className='product_image' style={{width:"100%", height:"100%"}} src={F.image} alt="Front" /> 
+                                <div  key={F.name} className="option_in_subcategory_front" onClick={() => setDetails(false)}>
+                                    <img onClick={() => image_handler_front(F.code) } className='product_image_front'  src={F.image} alt="Front" /> 
                                     <div className="product_name">{F.name}</div> 
                                 </div>
                                 )
@@ -100,8 +103,8 @@ const Bath = () => {
                             
                             { Korpus &&
                                 Korpus_Products.map((F) =>
-                                <div key={F.name} className="option_in_subcategory">
-                                   <img onClick={() => image_handler_korpus(F.code)} className='product_image' src={F.image} style={{width:"90%", height:"90%"}} alt="Korpus" />
+                                <div key={F.name} className="option_in_subcategory_korpus">
+                                   <img onClick={() => image_handler_korpus(F.code)} className='product_image_korpus' src={F.image}  alt="Korpus" />
                                    <div className="product_name">{F.name}</div> 
                                 </div>
                                 )
@@ -110,8 +113,8 @@ const Bath = () => {
 
                             { Waschtisch &&
                                 Waschtisch_Products.map((F) =>
-                                <div key={F.name} className="option_in_subcategory">
-                                    <img onClick={() => image_handler_wash(F.code)} className='product_image' src={F.image} alt="Waschtich" style={{width:"100%", height:"100%"}}/>
+                                <div key={F.name} className="option_in_subcategory_wash">
+                                    <img onClick={() => image_handler_wash(F.code)} className='product_image_wash' src={F.image} alt="Waschtich" />
                                     <div className="product_name">{F.name}</div> 
                                 </div>
                                 )
