@@ -1,5 +1,12 @@
-import bath from './images/one.png';
-import room from './images/room_thumbnail.jpg';
+import bath1 from './images/one.png';
+import bath2 from './images/room2.jpg';
+import bath3 from './images/room3.jpg';
+
+import bath1_thumb from './images/room1_thumbnail.jpg';
+import bath2_thumb from './images/room2_thumbnail.jpg';
+import bath3_thumb from './images/room3_thumbnail.jpg';
+
+
 import './bath.css';
 import { faBath } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,8 +21,9 @@ const Bath = () => {
     const [Korpus, setKorpus] = useState(false)
     const [Waschtisch, setWaschtisch] = useState(false)
 
-    const [show_image_room, setShow_room] = useState(false)
-    const [ima_room, setImage_room] = useState(null)
+    const [show_image_room1, setShow_room1] = useState(true)
+    const [show_image_room2, setShow_room2] = useState(false)
+    const [show_image_room3, setShow_room3] = useState(false)
 
     const [show_image_front, setShow_front] = useState(false)
     const [ima_front, setImage_front] = useState(null)
@@ -26,33 +34,61 @@ const Bath = () => {
     const [show_image_wash, setShow_wash] = useState(false)
     const [ima_wash, setImage_wash] = useState(null)
 
-    const [clicked_image, setClicked] = useState("")
+    const [clicked_image_front, setClicked_front] = useState("")
+    const [clicked_image_korpus, setClicked_korpus] = useState("")
+    const [clicked_image_wash, setClicked_wash] = useState("")
+
     const chosen = <FontAwesomeIcon size={"xl"} icon={faBath} 
                         style={{color:"red", cursor: 'pointer'}} />                               
 
 
 
+
+
+    function bath_background_handler(a){
+                if (a === "Room1")
+                {setShow_room1(true);
+                setShow_room2(false);
+                setShow_room3(false)
+                setShow_front(false);
+                setShow_korpus(false);
+                setShow_wash(false)}
+                if (a === "Room2")
+                {setShow_room1(false);
+                setShow_room2(true);
+                setShow_room3(false);
+                setShow_front(false);
+                setShow_korpus(false);
+                setShow_wash(false)}
+                if (a === "Room3")
+                {setShow_room1(false);
+                setShow_room2(false);
+                setShow_room3(true);
+                setShow_front(false);
+                setShow_korpus(false);
+                setShow_wash(false)} 
+    }
+
     function image_handler_front(a,b){
         setShow_front(true)
         setImage_front(a)
         setDetails(false)
-        setClicked(b)
+        setClicked_front(b)
     }
 
-    function image_handler_korpus(a){
+    function image_handler_korpus(a,b){
         setShow_korpus(true)
         setImage_korpus(a)
         setDetails(false)
+        setClicked_korpus(b)
     }
 
-    function image_handler_wash(a){
+    function image_handler_wash(a,b){
         setShow_wash(true)
         setImage_wash(a)
         setDetails(false)
+        setClicked_wash(b)
     }
-
-
-
 
 
     function room_mouse_enter () {
@@ -84,14 +120,17 @@ const Bath = () => {
             
             <div className="bath_panel">
                 <h1 style={{position:"absolute",top:"0%",zIndex:"50", left:"40%" }}>Dein Haus! Deine Seele </h1>
-                <img className='bath_image' src={bath} alt="bath_image_alternative" />
                 
+                <img className='bath_image' src={show_image_room1 ? bath1 :
+                        show_image_room2 ? bath2 : bath3} alt="bath_image_alternative" />
+
+
+
+                {/* Front, Korpus, Waschtich images */}
                 <img className='test' style={{position:"absolute", left:"0%", top:"0%" ,width:"100%", 
                 height:"100%",display:show_image_front ? "block": "none"}} src={ima_front} alt="bath_image_alternative" />
-
                 <img className='korpus' style={{position:"absolute", left:"0%", top:"0%" ,width:"100%", 
                 height:"100%",display:show_image_korpus ? "block": "none"}} src={ima_korpus} alt="bath_image_alternative" />
-
                 <img className='wash' style={{position:"absolute", left:"0%", top:"0%" ,width:"100%", 
                 height:"100%",display:show_image_wash ? "block": "none"}} src={ima_wash} alt="bath_image_alternative" />
 
@@ -117,9 +156,9 @@ const Bath = () => {
                             { Room &&
 
                                 <div className="option_in_subcategory_room" onClick={() => setDetails(false)}>
-                                    <img  className='room_image'  src={room} alt="Room" /> 
-                                    <img  className='room_image'  src={room} alt="Room" /> 
-                                    {/* <div className="product_name">Room</div>  */}
+                                    <img onClick={(e) => bath_background_handler (e.target.alt)} className='room_image'  src={bath1_thumb} alt="Room1" /> 
+                                    <img onClick={(e) => bath_background_handler (e.target.alt)} className='room_image'  src={bath2_thumb} alt="Room2" /> 
+                                    <img onClick={(e) => bath_background_handler (e.target.alt)} className='room_image'  src={bath3_thumb} alt="Room3" /> 
                                 </div>
                                 
                                 
@@ -131,7 +170,7 @@ const Bath = () => {
                                 <div  key={F.name} className="option_in_subcategory_front" onClick={() => setDetails(false)}>
                                     <img onClick={() => image_handler_front(F.code, F.name) } className='product_image_front'  src={F.image} alt="Front" /> 
                                     <div className="product_name">{F.name}</div> 
-                                    <div className="chosen" style={{display: clicked_image === F.name ? "grid" : "none"}}>{chosen}</div>
+                                    <div className="chosen" style={{display: clicked_image_front === F.name ? "grid" : "none"}}>{chosen}</div>
                                 </div>
                                 )
                             }
@@ -139,8 +178,10 @@ const Bath = () => {
                             { Korpus &&
                                 Korpus_Products.map((F) =>
                                 <div key={F.name} className="option_in_subcategory_korpus">
-                                   <img onClick={() => image_handler_korpus(F.code)} className='product_image_korpus' src={F.image}  alt="Korpus" />
+                                   <img onClick={() => image_handler_korpus(F.code, F.name)} className='product_image_korpus' src={F.image}  alt="Korpus" />
                                    <div className="product_name">{F.name}</div> 
+                                   <div className="chosen" style={{display: clicked_image_korpus === F.name ? "grid" : "none"}}>{chosen}</div>
+
                                 </div>
                                 )
 
@@ -149,8 +190,10 @@ const Bath = () => {
                             { Waschtisch &&
                                 Waschtisch_Products.map((F) =>
                                 <div key={F.name} className="option_in_subcategory_wash">
-                                    <img onClick={() => image_handler_wash(F.code)} className='product_image_wash' src={F.image} alt="Waschtich" />
+                                    <img onClick={() => image_handler_wash(F.code, F.name)} className='product_image_wash' src={F.image} alt="Waschtich" />
                                     <div className="product_name">{F.name}</div> 
+                                    <div className="chosen" style={{display: clicked_image_wash === F.name ? "grid" : "none"}}>{chosen}</div>
+
                                 </div>
                                 )
                             }
