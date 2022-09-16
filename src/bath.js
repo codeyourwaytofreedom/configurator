@@ -1,4 +1,4 @@
-import bath1 from './images/one.png';
+import bath1 from './images/onee.jpg';
 import bath2 from './images/room2.jpg';
 import bath3 from './images/room3.jpg';
 
