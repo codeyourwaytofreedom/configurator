@@ -1,5 +1,8 @@
 import bath from './images/one.png';
+import room from './images/room_thumbnail.jpg';
 import './bath.css';
+import { faBath } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import {Front_Products, Korpus_Products,Waschtisch_Products} from './photo_importer';
 
@@ -23,10 +26,17 @@ const Bath = () => {
     const [show_image_wash, setShow_wash] = useState(false)
     const [ima_wash, setImage_wash] = useState(null)
 
-    function image_handler_front(a){
+    const [clicked_image, setClicked] = useState("")
+    const chosen = <FontAwesomeIcon size={"xl"} icon={faBath} 
+                        style={{color:"red", cursor: 'pointer'}} />                               
+
+
+
+    function image_handler_front(a,b){
         setShow_front(true)
         setImage_front(a)
         setDetails(false)
+        setClicked(b)
     }
 
     function image_handler_korpus(a){
@@ -90,7 +100,7 @@ const Bath = () => {
                    
                         <div onMouseEnter={()=> setDetails(true)}  className="bath_panel_options">
                             <div className="bath_panel_option" onMouseOver={()=> room_mouse_enter()} 
-                            >Front</div>
+                            >Room</div>
                             <div className="bath_panel_option" onMouseOver={()=> front_mouse_enter()} 
                             >Front</div>
                             <div  className="bath_panel_option" onMouseEnter={()=> korpus_mouse_enter()}
@@ -107,8 +117,9 @@ const Bath = () => {
                             { Room &&
 
                                 <div className="option_in_subcategory_room" onClick={() => setDetails(false)}>
-                                    <img  className='room_image'  src={bath} alt="Room" /> 
-                                    <div className="product_name">Room</div> 
+                                    <img  className='room_image'  src={room} alt="Room" /> 
+                                    <img  className='room_image'  src={room} alt="Room" /> 
+                                    {/* <div className="product_name">Room</div>  */}
                                 </div>
                                 
                                 
@@ -118,8 +129,9 @@ const Bath = () => {
                                 Front_Products.map((F) =>
                                 // console.log(F.image) &&
                                 <div  key={F.name} className="option_in_subcategory_front" onClick={() => setDetails(false)}>
-                                    <img onClick={() => image_handler_front(F.code) } className='product_image_front'  src={F.image} alt="Front" /> 
+                                    <img onClick={() => image_handler_front(F.code, F.name) } className='product_image_front'  src={F.image} alt="Front" /> 
                                     <div className="product_name">{F.name}</div> 
+                                    <div className="chosen" style={{display: clicked_image === F.name ? "grid" : "none"}}>{chosen}</div>
                                 </div>
                                 )
                             }

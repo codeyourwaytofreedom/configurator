@@ -24,9 +24,9 @@
 .bath_panel_shell {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 5fr;
     top: -90%; left:2%;
-    width: 65%;
+    width: 75%;
     height: 70%;
     column-gap: 5%;
 }
@@ -67,29 +67,28 @@
 
 .option_in_subcategory_front, .option_in_subcategory_korpus, .option_in_subcategory_wash {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 5fr 5fr 1fr;
     align-content: center;
     padding-left: 4%;
-    padding-top: 2%;
     gap:4%;
     /* border: 1px solid red; */
     cursor: pointer;
     height: 10vh;
-    box-shadow: inset 2px 2px 5px  rgb(216, 224, 104);
-
-
+    box-shadow:  2px 2px 5px  rgb(24, 26, 4);
 }
+
+.option_in_subcategory_korpus{
+    
+    box-shadow:  3px 4px 5px  rgb(37, 39, 12);
+}
+
+
 .option_in_subcategory_room {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-content: center;
-    padding-left: 4%;
-    padding-top: 2%;
-    gap:4%;
-    /* border: 1px solid red; */
+    display: flex;
+    gap: 8%;
     cursor: pointer;
-    height: 10vh;
-    box-shadow: inset 2px 2px 5px  rgb(216, 224, 104);
+    height: 17vh;
+    box-shadow:  2px 2px 5px  rgb(71, 21, 1);
 }
 
 
@@ -100,6 +99,16 @@
     padding: 2%;
 
 }
+
+.chosen{
+    display: grid;
+    align-content: center;
+    justify-content:center;
+    padding: 2%;
+    padding-right: 50%;
+
+}
+
 
 .product_image_front{
     padding-top: 30%;
