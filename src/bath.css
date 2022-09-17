@@ -27,7 +27,7 @@
     width: 75%;
     height: 70%;
     column-gap: 5%;
-    /* border: 2px solid red; */
+    border: 2px solid red;
     object-fit: cover;
 }
 .bath_panel_options {
@@ -112,10 +112,11 @@
     left: 40%;
 }
 
-@media screen and (max-width:980px) {
+/* @media screen and (max-width:980px) {
         .motto{ color: red; }
         .bath_panel{
-            left:0%; top:-10%;
+            left:0%; 
+            top:-10%;
             width: 99%;
             height: 121%;
             min-width: 800px;
@@ -123,7 +124,7 @@
         .bath_panel_shell {
             top: -80%; 
             height: 60%;
-            /* border: 2px solid red; */
+            border: 2px solid red;
         }
         .bath_panel_options_detail{
             grid-template-columns: 1fr 1fr;
@@ -141,20 +142,102 @@
         .product_name{
             font-size: 1.4vw;
         }
-}
+} */
 
 
-/* @media screen and (max-width:770px) {
-    .motto{ color: green; }
+
+ /* mobil kısım buraya */
+ 
+ @media (max-width: 575.98px) { 
+    .bath_panel_shell {
+        border: 2px solid pink;
+
+    }
+ }
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .bath_panel{
+        left:0%; 
+        top:-20%;
+        width: 108.9%;
+        height: 133.1%;
+    }
     .bath_panel_shell {
         position: relative;
         display: grid;
         grid-template-columns: 1fr;
         border: 2px solid blue;
+        top: -75%;
+        height: 49%;
+        column-gap: 0%;
     }
     .bath_panel_options{
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 5%;
-        height: 18vh;
+        gap: 0%;
+        height: 14vh;        
     }
-} */
+
+    .bath_panel_option {
+        width: 70px;
+        height: 70px;
+    }
+    .room_image {
+        width: 19vh;
+        height: 13vh;
+    }
+
+ }
+
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    .motto{ color: red; }
+    .bath_panel{
+        left:0%; 
+        top:-10%;
+        width: 99%;
+        height: 121%;
+        min-width: 800px;
+    }
+    .bath_panel_shell {
+        top: -80%; 
+        height: 60%;
+        border: 2px solid red;
+    }
+    .bath_panel_options_detail{
+        grid-template-columns: 1fr 1fr;
+    }
+    .option_in_subcategory_room {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .option_in_subcategory_front, .option_in_subcategory_korpus, .option_in_subcategory_wash {
+        padding-left: 4%;
+        gap:4%;
+        height: 13vh;
+        width: 27vh;
+    }
+    .product_name{
+        font-size: 1.4vw;
+    }
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ @media (min-width:991.98px) and (max-width:1199.98) {
+
+ }

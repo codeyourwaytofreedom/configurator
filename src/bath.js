@@ -154,7 +154,7 @@ const Bath = () => {
 
                     
                         <div style={{display: Details ? "grid" : "none", 
-                        height: Korpus ? "60%" : Room ? "52%" : "100%",
+                        height: Korpus ? "75%" : Room ? "52%" : "100%",
                         marginTop: Korpus ? "10%" : "0%"
                         }} className="bath_panel_options_detail">    
                             { Room &&
@@ -164,7 +164,6 @@ const Bath = () => {
                                     <img onClick={(e) => bath_background_handler (e.target.alt)} className='room_image'  src={bath2_thumb} alt="Room2" /> 
                                     <img onClick={(e) => bath_background_handler (e.target.alt)} className='room_image'  src={bath3_thumb} alt="Room3" /> 
                                 </div>
-                                
                                 
                             }
 
