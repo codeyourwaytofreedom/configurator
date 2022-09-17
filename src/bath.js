@@ -1,4 +1,4 @@
-import bath1 from './images/onee.jpg';
+import bath1 from './images/room1.jpg';
 import bath2 from './images/room2.jpg';
 import bath3 from './images/room3.jpg';
 
@@ -38,7 +38,7 @@ const Bath = () => {
     const [clicked_image_korpus, setClicked_korpus] = useState("")
     const [clicked_image_wash, setClicked_wash] = useState("")
 
-    const chosen = <FontAwesomeIcon size={"xl"} icon={faBath} 
+    const chosen = <FontAwesomeIcon size={"l"} icon={faBath} 
                         style={{color:"red", cursor: 'pointer'}} />                               
 
 
@@ -52,7 +52,11 @@ const Bath = () => {
                 setShow_room3(false)
                 setShow_front(false);
                 setShow_korpus(false);
-                setShow_wash(false)}
+                setShow_wash(false)
+                setClicked_front("")
+                setClicked_korpus("")
+                setClicked_wash("")
+                }
                 if (a === "Room2")
                 {setShow_room1(false);
                 setShow_room2(true);
@@ -119,7 +123,7 @@ const Bath = () => {
 
             
             <div className="bath_panel">
-                <h1 style={{position:"absolute",top:"0%",zIndex:"50", left:"40%" }}>Dein Haus! Deine Seele </h1>
+                {/* <h1 className='motto'>Dein Haus! Deine Seele </h1> */}
                 
                 <img className='bath_image' src={show_image_room1 ? bath1 :
                         show_image_room2 ? bath2 : bath3} alt="bath_image_alternative" />
@@ -127,30 +131,30 @@ const Bath = () => {
 
 
                 {/* Front, Korpus, Waschtich images */}
-                <img className='test' style={{position:"absolute", left:"0%", top:"0%" ,width:"100%", 
+                <img className='test' style={{position:"absolute", left:"0%", top:"0%" ,width:"100%", objectFit: "contain",
                 height:"100%",display:show_image_front ? "block": "none"}} src={ima_front} alt="bath_image_alternative" />
-                <img className='korpus' style={{position:"absolute", left:"0%", top:"0%" ,width:"100%", 
+                <img className='korpus' style={{position:"absolute", left:"0%", top:"0%" ,width:"100%", objectFit: "contain",
                 height:"100%",display:show_image_korpus ? "block": "none"}} src={ima_korpus} alt="bath_image_alternative" />
-                <img className='wash' style={{position:"absolute", left:"0%", top:"0%" ,width:"100%", 
+                <img className='wash' style={{position:"absolute", left:"0%", top:"0%" ,width:"100%", objectFit: "contain",
                 height:"100%",display:show_image_wash ? "block": "none"}} src={ima_wash} alt="bath_image_alternative" />
 
 
                 <div onMouseLeave={()=> setDetails(false)} className="bath_panel_shell">
                    
                         <div onMouseEnter={()=> setDetails(true)}  className="bath_panel_options">
-                            <div className="bath_panel_option" onMouseOver={()=> room_mouse_enter()} 
+                            <div className="bath_panel_option" id='option_room' onMouseOver={()=> room_mouse_enter()} 
                             >Room</div>
-                            <div className="bath_panel_option" onMouseOver={()=> front_mouse_enter()} 
+                            <div className="bath_panel_option" id='option_front' onMouseOver={()=> front_mouse_enter()} 
                             >Front</div>
-                            <div  className="bath_panel_option" onMouseEnter={()=> korpus_mouse_enter()}
+                            <div  className="bath_panel_option" id='option_korpus' onMouseEnter={()=> korpus_mouse_enter()}
                             >Korpus</div>
-                            <div  className="bath_panel_option" onMouseEnter={()=> Waschtisch_mouse_enter() }
+                            <div  className="bath_panel_option" id='option_wash' onMouseEnter={()=> Waschtisch_mouse_enter() }
                             >Waschtisch</div>
                         </div>
 
                     
                         <div style={{display: Details ? "grid" : "none", 
-                        height: Korpus ? "60%" : Room ? "30%" : "100%",
+                        height: Korpus ? "60%" : Room ? "52%" : "100%",
                         marginTop: Korpus ? "10%" : "0%"
                         }} className="bath_panel_options_detail">    
                             { Room &&
