@@ -171,7 +171,7 @@
     .bath_panel_options{
         grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 0%;
-        height: 14vh;        
+        height: 16vh;        
     }
 
     .bath_panel_option {
