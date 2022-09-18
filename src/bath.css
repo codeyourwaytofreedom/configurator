@@ -148,6 +148,18 @@
         width: 19vh;
         height: 15vh;
     }
+    .bath_panel_options_detail{
+        grid-template-columns: 1fr 1fr;
+    }
+    .option_in_subcategory_front, .option_in_subcategory_korpus, .option_in_subcategory_wash {
+        padding-left: 5%;
+        gap: 4%;
+        height: 16vh;
+        width: 25vh;
+    }
+    .product_name{
+        font-size: 3vw;
+    }
     
  }
 
