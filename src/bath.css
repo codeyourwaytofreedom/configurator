@@ -144,6 +144,9 @@
         height: 50px;
         box-shadow: inset 1px 1px 5px rgb(17, 31, 18);
     }
+    .bath_panel_options_detail{
+        gap:1%; padding: 0%;
+    }
     .room_image {
         width: 19vh;
         height: 15vh;
