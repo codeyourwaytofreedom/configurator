@@ -160,6 +160,9 @@
     .product_name{
         font-size: 3vw;
     }
+    .chosen{
+        padding-right: 80%;
+    }
     
  }
 
