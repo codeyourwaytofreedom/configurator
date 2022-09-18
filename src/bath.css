@@ -27,7 +27,7 @@
     width: 75%;
     height: 70%;
     column-gap: 5%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     object-fit: cover;
 }
 .bath_panel_options {
@@ -112,47 +112,43 @@
     left: 40%;
 }
 
-/* @media screen and (max-width:980px) {
-        .motto{ color: red; }
-        .bath_panel{
-            left:0%; 
-            top:-10%;
-            width: 99%;
-            height: 121%;
-            min-width: 800px;
-        }
-        .bath_panel_shell {
-            top: -80%; 
-            height: 60%;
-            border: 2px solid red;
-        }
-        .bath_panel_options_detail{
-            grid-template-columns: 1fr 1fr;
-        }
-        .option_in_subcategory_room {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-        .option_in_subcategory_front, .option_in_subcategory_korpus, .option_in_subcategory_wash {
-            padding-left: 4%;
-            gap:4%;
-            height: 13vh;
-            width: 27vh;
-        }
-        .product_name{
-            font-size: 1.4vw;
-        }
-} */
-
-
-
  /* mobil kısım buraya */
  
  @media (max-width: 575.98px) { 
-    .bath_panel_shell {
-        border: 2px solid pink;
-
+    .bath_panel{
+        left:0%; 
+        top:-20%;
+        width: 108.9%;
+        height: 133.1%;
     }
+    .bath_panel_shell {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        /* border: 2px solid pink; */
+        top: -79%;
+        height: 49%;
+        column-gap: 0%;
+        left: 0%;
+        width: 92%;
+    }
+    .bath_panel_options{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 1%;
+        height: 10vh; 
+        padding: 0%;   
+        padding-left: 5%;    
+    }
+    .bath_panel_option{
+        width: 99%;
+        height: 50px;
+        box-shadow: inset 1px 1px 5px rgb(17, 31, 18);
+    }
+    .room_image {
+        width: 19vh;
+        height: 15vh;
+    }
+    
  }
 
 /* // Small devices (landscape phones, 576px and up) */
@@ -167,7 +163,7 @@
         position: relative;
         display: grid;
         grid-template-columns: 1fr;
-        border: 2px solid blue;
+        /* border: 2px solid blue; */
         top: -75%;
         height: 49%;
         column-gap: 0%;
@@ -179,7 +175,7 @@
     }
 
     .bath_panel_option {
-        width: 70px;
+        width: 109px;
         height: 70px;
     }
     .room_image {
@@ -203,7 +199,7 @@
     .bath_panel_shell {
         top: -80%; 
         height: 60%;
-        border: 2px solid red;
+        /* border: 2px solid red; */
     }
     .bath_panel_options_detail{
         grid-template-columns: 1fr 1fr;
