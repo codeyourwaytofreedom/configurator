@@ -117,16 +117,17 @@
  @media (max-width: 575.98px) { 
     .bath_panel{
         left:0%; 
-        top:-20%;
+        top:-30%;
         width: 108.9%;
         height: 133.1%;
+        /* aaa */
     }
     .bath_panel_shell {
         position: relative;
         display: grid;
         grid-template-columns: 1fr;
         /* border: 2px solid pink; */
-        top: -73%;
+        top: -75%;
         height: 49%;
         column-gap: 0%;
         left: 0%;
