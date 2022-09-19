@@ -253,6 +253,10 @@
         height: 97px;
         width: 209px;
     }
+    .product_image_front, .product_image_korpus, .product_image_wash {
+        width: 85px;
+        height: 65px;
+    }
     .product_name{
         font-size: 1.4vw;
     }
