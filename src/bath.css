@@ -113,15 +113,16 @@
     z-index: 50;
     left: 40%;
 }
-/* dede */
+
  /* mobil kısım buraya */
  
  @media (max-width: 575.98px) { 
     .bath_panel{
         left:0%; 
-        top:-30%;
+        top:-10%;
         width: 108.9%;
         height: 133.1%;
+        min-height: 300px;
         /* aaa */
     }
     .bath_panel_shell {
