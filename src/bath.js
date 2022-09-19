@@ -47,7 +47,7 @@ const Bath = () => {
     
     const do_FS = useFullScreenHandle();
     
-    const fullS = <FontAwesomeIcon onClick={do_FS.enter} size={"2xl"} icon={faTabletScreenButton} 
+    const fullS = <FontAwesomeIcon onClick={do_FS.enter} size={"3xl"} icon={faTabletScreenButton} 
     style={{color:"red", cursor: 'pointer'}} />
 
 
@@ -131,13 +131,18 @@ const Bath = () => {
                                     }                                                        
     return ( 
 
-            
+            <FullScreen handle={do_FS}>
             <div className="bath_panel">
+                 
                 {/* <h1 className='motto'>Dein Haus! Deine Seele </h1> */}
-                <FontAwesomeIcon onClick={do_FS.enter} size={"2xl"} icon={faTabletScreenButton} 
+                <FontAwesomeIcon onClick={do_FS.enter} size={"xl"} icon={faTabletScreenButton} 
                 style={{position:"absolute", 
                 top:"50%", left:"45%", zIndex:"500",
-                color:"red", cursor: 'pointer'}} />
+                color:"gray", cursor: 'pointer'}} />
+                <FontAwesomeIcon onClick={do_FS.exit} size={"xl"} icon={faTabletScreenButton} 
+                style={{position:"absolute", 
+                top:"50%", left:"50%", zIndex:"500",
+                color:"gray", cursor: 'pointer'}} />
                 
                 <img className='bath_image' src={show_image_room1 ? bath1 :
                         show_image_room2 ? bath2 : bath3} alt="bath_image_alternative" />
@@ -220,14 +225,14 @@ const Bath = () => {
                         </div>
                 </div>            
                 
-                <FullScreen handle={do_FS}>
-                            <button onClick={do_FS.exit}> Exit Full Screen </button>
-                </FullScreen>
+               
+                            {/* <button onClick={do_FS.exit}> Exit Full Screen </button> */}
+                
 
             
             
             </div>
-            
+            </FullScreen>
      );
 }
  
