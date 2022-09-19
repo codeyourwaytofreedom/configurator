@@ -13,7 +13,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import {Front_Products, Korpus_Products,Waschtisch_Products} from './photo_importer';
 
-import { FullScreen, useFullScreenHandle } from "react-full-screen";
+// import { FullScreen, useFullScreenHandle } from "react-full-screen";
 
 
 const Bath = () => {
@@ -45,10 +45,10 @@ const Bath = () => {
 
     
     
-    const do_FS = useFullScreenHandle();
+    // const do_FS = useFullScreenHandle();
     
-    const fullS = <FontAwesomeIcon onClick={do_FS.enter} size={"2xl"} icon={faTabletScreenButton} 
-    style={{color:"red", cursor: 'pointer'}} />
+    // const fullS = <FontAwesomeIcon onClick={do_FS.enter} size={"2xl"} icon={faTabletScreenButton} 
+    // style={{color:"red", cursor: 'pointer'}} />
 
 
 
@@ -217,9 +217,9 @@ const Bath = () => {
                         </div>
                 </div>            
                 
-                <FullScreen handle={do_FS}>
+                {/* <FullScreen handle={do_FS}>
                             <button onClick={do_FS.exit}> Exit Full Screen </button>
-                </FullScreen>
+                </FullScreen> */}
 
             
             
