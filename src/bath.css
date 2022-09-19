@@ -183,10 +183,10 @@
     .bath_panel{
         left:0%; 
         top:-15%;
-        width: 90%;
-        height: 110%;
-        /* width: 108.9%;
-        height: 133.1%; */
+        /* width: 90%;
+        height: 110%; */
+        width: 108.9%;
+        height: 133.1%;
     }
     .bath_panel_shell {
         position: relative;
@@ -223,7 +223,8 @@
     .motto{ color: red; }
     .bath_panel{
         left:0%; 
-        top:-10%;
+        /* top:-10%; */
+        top:-30%;
         width: 99%;
         height: 121%;
         min-width: 800px;
