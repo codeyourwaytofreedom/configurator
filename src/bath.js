@@ -47,7 +47,7 @@ const Bath = () => {
     
     const do_FS = useFullScreenHandle();
     
-    const fullS = <FontAwesomeIcon onClick={do_FS.enter} size={"l"} icon={faTabletScreenButton} 
+    const fullS = <FontAwesomeIcon onClick={do_FS.enter} size={"2xl"} icon={faTabletScreenButton} 
     style={{color:"red", cursor: 'pointer'}} />
 
 
@@ -134,7 +134,7 @@ const Bath = () => {
             
             <div className="bath_panel">
                 {/* <h1 className='motto'>Dein Haus! Deine Seele </h1> */}
-                <div>{fullS}</div>
+                {/* <div className='fullscreen'>{fullS}</div> */}
                 
                 <img className='bath_image' src={show_image_room1 ? bath1 :
                         show_image_room2 ? bath2 : bath3} alt="bath_image_alternative" />
