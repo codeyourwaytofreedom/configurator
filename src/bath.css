@@ -124,14 +124,12 @@
         width: 108.9%;
         height: 133.1%;
         max-height: 300px;
-        /* aaa */
     }
     .bath_panel_shell {
         position: relative;
         display: grid;
         grid-template-columns: 1fr;
-        /* border: 2px solid pink; */
-        top: -69%;
+        top: -79%;
         height: 49%;
         column-gap: 0%;
         left: 0%;
