@@ -13,7 +13,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import {Front_Products, Korpus_Products,Waschtisch_Products} from './photo_importer';
 
-// import { FullScreen, useFullScreenHandle } from "react-full-screen";
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
 
 
 const Bath = () => {
@@ -45,10 +45,10 @@ const Bath = () => {
 
     
     
-    // const do_FS = useFullScreenHandle();
+    const do_FS = useFullScreenHandle();
     
-    // const fullS = <FontAwesomeIcon onClick={do_FS.enter} size={"2xl"} icon={faTabletScreenButton} 
-    // style={{color:"red", cursor: 'pointer'}} />
+    const fullS = <FontAwesomeIcon onClick={do_FS.enter} size={"2xl"} icon={faTabletScreenButton} 
+    style={{color:"red", cursor: 'pointer'}} />
 
 
 
@@ -134,7 +134,10 @@ const Bath = () => {
             
             <div className="bath_panel">
                 {/* <h1 className='motto'>Dein Haus! Deine Seele </h1> */}
-                {/* <div className='fullscreen'>{fullS}</div> */}
+                <FontAwesomeIcon onClick={do_FS.enter} size={"2xl"} icon={faTabletScreenButton} 
+                style={{position:"absolute", 
+                top:"50%", left:"45%", zIndex:"500",
+                color:"red", cursor: 'pointer'}} />
                 
                 <img className='bath_image' src={show_image_room1 ? bath1 :
                         show_image_room2 ? bath2 : bath3} alt="bath_image_alternative" />
@@ -217,9 +220,9 @@ const Bath = () => {
                         </div>
                 </div>            
                 
-                {/* <FullScreen handle={do_FS}>
+                <FullScreen handle={do_FS}>
                             <button onClick={do_FS.exit}> Exit Full Screen </button>
-                </FullScreen> */}
+                </FullScreen>
 
             
             
