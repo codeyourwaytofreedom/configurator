@@ -224,8 +224,7 @@
     .motto{ color: red; }
     .bath_panel{
         left:0%; 
-        /* top:-10%; */
-        top:-30%;
+        top:-10%;
         width: 99%;
         height: 121%;
         min-width: 800px;
