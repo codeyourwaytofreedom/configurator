@@ -231,14 +231,19 @@
         min-width: 800px;
     }
     .bath_panel_shell {
-        top: -80%; 
+        top: -70%; 
         /* top: -70%;  */
-        height: 60%;
+        height: 40%;
         /* border: 2px solid red; */
     }
     .bath_panel_options_detail{
         grid-template-columns: 1fr 1fr;
     }
+    .bath_panel_option {
+        width: 88px;
+        height: 66px;
+    }
+    
     .option_in_subcategory_room {
         display: grid;
         grid-template-columns: 1fr 1fr;
