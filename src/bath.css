@@ -226,7 +226,6 @@
         top:-30%;
         width: 99%;
         height: 121%;
-        min-width: 800px;
     }
     .bath_panel_shell {
         top: -70%; 
@@ -249,8 +248,10 @@
     .option_in_subcategory_front, .option_in_subcategory_korpus, .option_in_subcategory_wash {
         padding-left: 4%;
         gap:4%;
-        height: 13vh;
-        width: 27vh;
+        /* height: 13vh;
+        width: 27vh; */
+        height: 97px;
+        width: 209px;
     }
     .product_name{
         font-size: 1.4vw;
