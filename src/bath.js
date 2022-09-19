@@ -8,10 +8,12 @@ import bath3_thumb from './images/room3_thumbnail.jpg';
 
 
 import './bath.css';
-import { faBath } from '@fortawesome/free-solid-svg-icons';
+import { faBath,faTabletScreenButton } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import {Front_Products, Korpus_Products,Waschtisch_Products} from './photo_importer';
+
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
 
 
 const Bath = () => {
@@ -39,7 +41,15 @@ const Bath = () => {
     const [clicked_image_wash, setClicked_wash] = useState("")
 
     const chosen = <FontAwesomeIcon size={"l"} icon={faBath} 
-                        style={{color:"red", cursor: 'pointer'}} />                               
+                        style={{color:"red", cursor: 'pointer'}} />
+
+    
+    
+    const do_FS = useFullScreenHandle();
+    
+    const fullS = <FontAwesomeIcon onClick={do_FS.enter} size={"l"} icon={faTabletScreenButton} 
+    style={{color:"red", cursor: 'pointer'}} />
+
 
 
 
@@ -124,6 +134,7 @@ const Bath = () => {
             
             <div className="bath_panel">
                 {/* <h1 className='motto'>Dein Haus! Deine Seele </h1> */}
+                <div>{fullS}</div>
                 
                 <img className='bath_image' src={show_image_room1 ? bath1 :
                         show_image_room2 ? bath2 : bath3} alt="bath_image_alternative" />
@@ -206,8 +217,14 @@ const Bath = () => {
                         </div>
                 </div>            
                 
-                
+                <FullScreen handle={do_FS}>
+                            <button onClick={do_FS.exit}> Exit Full Screen </button>
+                </FullScreen>
+
+            
+            
             </div>
+            
      );
 }
  
