@@ -183,8 +183,10 @@
     .bath_panel{
         left:0%; 
         top:-15%;
-        width: 108.9%;
-        height: 133.1%;
+        width: 90%;
+        height: 110%;
+        /* width: 108.9%;
+        height: 133.1%; */
     }
     .bath_panel_shell {
         position: relative;
