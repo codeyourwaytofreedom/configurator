@@ -25,10 +25,13 @@
 .bath_panel_shell {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr 5fr;
-    top: -90%; left:9%;
+    grid-template-columns: 1fr 5fr; 
+    left:9%;
+    /* top: -90%; */
     width: 75%;
-    height: 70%;
+    /* height: 70%; */
+    height: 55%;
+    top: -80%; 
     column-gap: 5%;
     /* border: 2px solid red; */
     object-fit: cover;
